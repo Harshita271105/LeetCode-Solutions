@@ -66,7 +66,7 @@ Each problem folder contains:
 ```text
 leetcode/
 │
-├── 217-Contains duplicate/
+├── Question Number
 │   ├── README.md
 │   └── solutions.py
 │
