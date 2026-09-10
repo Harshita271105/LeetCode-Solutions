@@ -1,7 +1,7 @@
 # 217. Contains Duplicate
 
 Difficulty: Easy  
-Topic: Array, Hash Set
+Topic: Array, Hash Table, Sorting
 
 
 ## Problem
@@ -40,96 +40,41 @@ Output
 true
 
 Explanation
-    Several values appear more than once.
+Several values appear more than once.
 
 ## Approach
 
-We need to check whether any number appears more than once.
-A set is useful for this problem because a set stores only unique elements.
-We create an empty set and traverse the array one element at a time.
+The easiest way to approach this is by brute forcing.
 
-For every number:
+So the first thing we do is look at the first number,its one.How do we know it is a duplicate or not?
+Well we compare it to every single number in rest of the array and that would be a big O(n) of time operation just to check if the first number is a duplicate or not.Then we have to check for 2nd number , we compare it with every other number.we do the same hing with 3rd and 4th number.
 
-1. Check whether the number is already present in the set.
-2. If it is already present, a duplicate has been found, so return True.
-3. If it is not present, add it to the set.
-4. If we finish checking the entire array without finding a duplicate, return False.
+So time complexity would be O(n^2) where n is just the size of array.
 
-## Step-by-Step Explanation
+So brute force solution is big O(n^2) time complexity and we don't need any extra memory. So the memory complexity is big O(1). 
 
-Suppose:
+Space complexity would be O(1).
 
-nums = [1,2,3,1]
+## Alternative Approach - 1
 
-Initially, the set is empty.
+Another possible approach is Sorting.
 
-### Step 1
+Sorting the inputs then any duplocate that do exist in the array then we can clearly see in the array there are going to be adjacent.So while trying to detct any duplocates in array, we have to iterate though the array once.
 
-Take 1
-1 is not present in the set, so add it.
-Set: {1}
+As we do that, we are just going to compare two neighbours in the array, checking tif they are duplicates.
+Next we are going to shift to out pointers to the next spot until we finish the entire array.
 
-### Step 2
+In this case we see these two adjacent values are duplicates.
 
-Take 2
-2 is not present in the set, so add it.
-Set: {1,2}
+The time complexity would be O(nlogn) since sorting takes extra memory,it does not take extra time complexity.
 
-### Step 3
+Space complexity would be O(1).
 
-Take 3
-3 is not present in the set, so add it.
-Set: {1,2,3}
+## Alternative Approach - 2
 
-### Step 4
+If we use hash set method we are going to allow us to insert elements into the hash set in O(1) and also allow us to us check.we can ask our hash map does that certain value exist?
+If we start at the beginning pf the array, nothing is in hashmap. So, a one does not exist in the hashmap, this means there is no duplicate of it. But after we have checked if this is a duplicate, we do have to add it to our hash set because later on if we encounter a one like over here,then we determine that this is a duplicate because we know that there's already a one in our hash set. So next we're going to check two. Two is not a duplicate. Add it here. Is three a duplicate? Nope. Add it here. One. Is this a duplicate? Yep, there's a one over here. So we return true. This does contain duplicates.
 
-Take 1
-1 is already present in the set.
-Therefore, a duplicate has been found and we return True
+Time complexily is O(n) and space complexity is O(n) so we do not end up using extra memory.
 
-
-## Why Use a Set?
-
-A set stores unique values and provides an efficient way to check whether an element already exists.
-Instead of comparing every element with every other element, we can check whether the current element is already present in the set.
-The average time for searching in a set is O(1).
-Therefore, we can detect duplicates efficiently while traversing the array.
-
-## Alternative Approach
-
-Another possible approach is to compare the length of the original array with the length of a set created from the array.
-
-For example:
-
-`len(nums) != len(set(nums))`
-
-If the lengths are different, it means some duplicate values were removed when creating the set.
-
-However, the traversal approach is useful because it can return immediately when a duplicate is found, without necessarily processing the remaining elements.
-
-### Time Complexity
-
-O(n)
-
-We traverse the array once.
-Set lookup and insertion take O(1) on average.
-Therefore, the overall time complexity is:
-
-O(n)
-
-### Space Complexity
-
-O(n)
-
-In the worst case, all elements are unique, so the set stores all n elements.
-
-Therefore, the space complexity is:
-
-O(n)
-
-
-## Key Takeaway
-
-The main idea is to use a Hash Set to keep track of elements that have already been seen.
-Whenever we encounter an element that is already present in the set, we know that a duplicate exists.
-Pattern: Hash Set / Duplicate Detection
+// time complexity measures how long an algorithm takes to run, while space complexity measures how much memory the algorithm uses.
