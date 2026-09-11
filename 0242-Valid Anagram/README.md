@@ -22,6 +22,11 @@ Input: s = "rat", t = "car"
 Output: false
 Explanation: all the letters of string s are not used in string t.Like letter t from string s is not being used is string t.
 
+## Constrains
+1 <= s.length, t.length <= 5 * 104
+s and t consist of lowercase English letters.
+ 
+
 ## Approach
 
 Using 2 hashmap ,one for each string and key value in the hashmap is going to be character.so,in a string s,there are 3 a's, n,g,r,m as 1 and we know that string t as same as string s. so, at the end we can see that they are exact same hashmap.once we have built these hashmap,we can then go through the keys and then compare that the counts for each character are the exact same which in this case,yes it is. After comparison,we know that they are anagrams.

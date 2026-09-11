@@ -42,6 +42,10 @@ true
 Explanation
 Several values appear more than once.
 
+## Contrains
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+
 ## Approach
 
 The easiest way to approach this is by brute forcing.
