@@ -1,4 +1,4 @@
-# 217. Contains Duplicate
+# 0242. Valid Anagram
 
 Difficulty: Easy  
 Topic: String, Hash Table, Sorting
