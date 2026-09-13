@@ -3,7 +3,6 @@
 Difficulty: Easy  
 Topic: String, Hash Table, Sorting
 
-
 ## Problem
 
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -26,7 +25,6 @@ Explanation: all the letters of string s are not used in string t.Like letter t 
 1 <= s.length, t.length <= 5 * 104
 s and t consist of lowercase English letters.
  
-
 ## Approach
 
 Using 2 hashmap ,one for each string and key value in the hashmap is going to be character.so,in a string s,there are 3 a's, n,g,r,m as 1 and we know that string t as same as string s. so, at the end we can see that they are exact same hashmap.once we have built these hashmap,we can then go through the keys and then compare that the counts for each character are the exact same which in this case,yes it is. After comparison,we know that they are anagrams.
@@ -34,7 +32,6 @@ Using 2 hashmap ,one for each string and key value in the hashmap is going to be
 Time complexity is O(n) since we are going to iterate both the strings ,the memory complexity is the same O(s+t), the sixe of string s and t and would some extra memory.
 
 ## Alternative Approach
-
 ## How can u make a solution where we don't need extra memory?Can you do it with O(1) memory?
 
 If you took all these characters and put them in a hashmap where we can count the occurence, then its preety easy to check if they equal, but isn't there any other way?
