@@ -3,7 +3,6 @@
 Difficulty: Easy  
 Topic: Array, Hash Table, Sorting
 
-
 ## Problem
 
 Given an integer array nums, return true if any value appears at least twice in the array.
@@ -13,10 +12,8 @@ Return false if every element appears only once.
 
 Input
 nums = [1,2,3,1]
-
 Output
 true
-
 Explanation
 The element 1 appears twice, at indices 0 and 3
 
@@ -24,10 +21,8 @@ The element 1 appears twice, at indices 0 and 3
 
 Input
 nums = [1,2,3,4]
-
 Output
 false
-
 Explanation
 Every element in the array is distinct.
 
@@ -35,10 +30,8 @@ Every element in the array is distinct.
 
 Input
 nums = [1,1,1,3,3,4,3,2,4,2]
-
 Output
 true
-
 Explanation
 Several values appear more than once.
 
